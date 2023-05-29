@@ -12,7 +12,8 @@ const sequalize = require('./sequalize')
 
 const userCOntroller = require('./controllers/user-controller')
 
-app.use("/users",  userController.getAllUsers)
+app.get("/users",  userController.getAllUsers)
+app.get("/users/:id",  userController.getAllUsers)
 
 app.run(process.env.port, {
   console.log("server started ")
